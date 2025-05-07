@@ -1,1 +1,242 @@
-footer{background:red}
+@import url("/assets/application-93308368.css");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+.icon.icon-add {
+  padding: 8px 16px;
+  background: green;
+  border-color: green;
+  color: #fff;
+}
+.icon.icon-add svg {
+  stroke: #fff;
+}
+.icon.icon-add:hover {
+  color: #fff;
+  text-decoration: none;
+}
+.icon.icon-add:hover svg {
+  stroke: #fff;
+}
+
+fieldset.collapsible > legend {
+  font-size: 0.875rem;
+}
+
+table.issues tr.issue.priority-3 {
+  background: rgba(251, 105, 98, 0.1);
+}
+table.list {
+  font-size: 0.875rem;
+}
+table.list td {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+:root {
+  --fonts-main: "Roboto", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 500;
+  padding: 0;
+  margin: 0 0 0.6em;
+}
+
+table.list th {
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+input[type=submit] {
+  height: auto;
+  padding: 12px 16px;
+  border-radius: 4px;
+  color: #000;
+  background: var(--grey);
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+input[type=submit][value=Create] {
+  background: green;
+  border-color: green;
+  color: #fff;
+}
+input[type=submit][value=Create] svg {
+  stroke: #fff;
+}
+input[type=submit][value=Create]:hover {
+  color: #fff;
+  text-decoration: none;
+}
+input[type=submit][value=Create]:hover svg {
+  stroke: #fff;
+}
+
+#top-menu {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  padding: 8px 16px;
+  font-size: 1rem;
+  align-items: center;
+}
+#top-menu > * {
+  float: none;
+}
+#top-menu > ul {
+  grid-area: 1/1/3/2;
+  display: flex;
+  gap: 16px;
+}
+#top-menu > ul li {
+  float: none;
+}
+#top-menu > ul li a {
+  margin-right: 0;
+}
+#top-menu a {
+  font-weight: 300;
+}
+#top-menu #loggedas {
+  grid-area: 1/2/2/3;
+  font-size: 0;
+  justify-self: end;
+}
+#top-menu #loggedas a {
+  font-size: 1rem;
+  margin: 0;
+}
+#top-menu #account ul {
+  display: flex;
+  gap: 8px;
+}
+#top-menu #account a {
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+#header {
+  min-height: 0;
+  padding: 8px 16px 38px;
+}
+#header h1 {
+  margin: 0;
+  padding: 0;
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+
+#main-menu li a {
+  font-size: 0.875rem;
+  padding: 6px 12px;
+}
+
+#footer {
+  background: #fff;
+  color: #000;
+  font-size: 0.875rem;
+}
+
+#projects-index .projects.root > .root {
+  position: relative;
+  transition: background-color 0.2s;
+}
+#projects-index .projects.root > .root:hover {
+  background-color: #f0f0f0;
+}
+#projects-index .projects.root > .root a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+#projects-index .projects.root > .root a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+fieldset#filters > div {
+  display: flex;
+  gap: 16px;
+}
+fieldset#filters > div > div {
+  float: none;
+  width: auto;
+}
+fieldset#filters > div #filters-table .filter {
+  margin: 0;
+  align-items: center;
+}
+fieldset#filters > div #filters-table .field {
+  width: auto;
+  display: flex;
+  align-items: center;
+}
+
+div.issue {
+  padding: 16px;
+  background-color: #f7fff8;
+}
+div.issue .attributes .attribute.progress p.percent {
+  line-height: 20px;
+}
+
+#query_form_content {
+  font-size: 0.875rem;
+}
+
+#admin-menu > ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(15rem, 100%), 1fr));
+  gap: 12px 16px;
+}
+#sidebar-wrapper #admin-menu > ul {
+  row-gap: 4px;
+}
+#admin-menu > ul > li {
+  padding: 0;
+}
+#admin-menu > ul > li a {
+  height: auto;
+  padding: 12px 16px;
+  border-radius: 4px;
+  color: #000;
+  background: var(--grey);
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background-color: #f0f0f0;
+  display: block;
+}
+#sidebar-wrapper #admin-menu > ul > li a {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+#sidebar {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+#sidebar a.selected {
+  margin: 0;
+  padding: 12px 16px;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+/*# sourceMappingURL=application.css.map */
