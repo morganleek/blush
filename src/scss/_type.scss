@@ -12,16 +12,111 @@ h1, h2, h3, h4, h5, h6 {
 
 table {
 	&.list {
+		font-size: 0.875rem;
+		border: 0 none;
+		border-radius: 4px;
+		border-collapse: collapse;
+    border-spacing: 0px;
+		box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);
+		background-image: linear-gradient(rgba(255 255 255 / 0.051), rgba(255 255 255 / 0.051));
 		th {
 			font-weight: 400;
-			text-transform: uppercase;
+			text-align: left;
+			line-height: 1.5rem;
+			font-size: 0.875rem;
+			padding: 16px;
+			background: #fff;
+			border: 0 none;
+			.icon {
+				display: inline-flex;
+				padding: 0;
+				border: 0 none;
+				background-color: transparent;
+			}
+			a {
+				&:has(svg) {
+					display: flex;
+					gap: 0px;
+					svg {
+						order: 2;
+					}
+				}
+				&.sort {
+					padding-right: 0;
+				}
+				.icon-label {
+					margin-left: 0;
+				}
+			}
+		}
+		td {
+			text-align: left;
+			padding: 16px;
+			&.id {
+				text-align: left;
+			}
+			&.checkbox {
+				padding: 16px;
+			}
+			&.odd {
+				&:hover {
+					background: rgba(0, 0, 0, 0.04);
+				}
+			}
+			input[type="checkbox"] {
+				height: 16px;
+			}
+			a {
+				font-weight: 400;
+			}
+		}
+		th, td {
+			&.buttons {
+				display: table-cell;
+			}
+		}
+		.wiki {
+			padding: 0;
+			@include components.wiki;
 		}
 	}
+	&.issues {
+		tr.issue {
+			&.priority-3 {
+				background: rgba(251,105,98, 0.1);
+			}
+		}
+		
+	}
+}
+
+input:not([type="submit"]):not([type="radio"]):not([type="checkbox"]) {
+	@include components.input-wrapper;
 }
 
 input[type="submit"] {
 	@include components.button;
 	&[value="Create"] {
 		@include components.icon-green;
+	}
+}
+
+textarea {
+	padding: 10px 6px;
+}
+
+select {
+	@include components.select-wrapper;
+}
+
+.buttons {
+	font-size: 0.875rem;
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	& > .icon:not(:first-child) {
+		margin-left: 0;
 	}
 }

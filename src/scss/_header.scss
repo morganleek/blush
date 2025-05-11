@@ -1,20 +1,74 @@
+@use "components";
+
 #header {
 	// order: -1;
+	background: #628DB6;
 	min-height: 0;
-	padding: 8px 16px 38px;
+	padding: 12px 25px;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 16px 8px;
+	justify-content: space-between;
+	align-items: center;
+	&:has(> #main-menu) {
+		padding-bottom: 0;
+	}
 	h1 {
 		margin: 0;
 		padding: 0;
 		font-size: 1.25rem;
 		font-weight: 300;
+		order: -1;
 	}
 }
 
 #main-menu {
+	position: relative;
+	margin: 0;
+	left: auto;
+	bottom: auto;
 	li {
 		a {
-			font-size: 0.875rem;
-			padding: 6px 12px;
+			@include components.button;
+			border-top: 3px solid transparent;
+			border-left: 0;
+			border-right: 0;
+			border-bottom: 3px solid transparent;
+			border-radius: 0;
+			background-color: transparent;
+			color: #fff;
+			font-weight: 400;
+			// font-size: 0.875rem;
+			// padding: 6px 12px;
+			&.selected, 
+			&.selected:hover,
+			&:hover {
+				background-color: transparent;
+				border-bottom-color: #fff; // var(--blue);
+				color: #fff; // var(--blue);
+				font-weight: 400;
+			}
 		}
+	}
+}
+
+#quick-search {
+	#q {
+		@include components.input-wrapper;
+	}
+	form {
+		label {
+			font-size: 0;
+			a {
+				font-size: 0.875rem;
+				padding-right: 8px;
+			}
+		}
+	}
+}
+
+#project-jump {
+	.drdn-trigger {
+		@include components.input-wrapper;
 	}
 }

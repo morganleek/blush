@@ -1,8 +1,18 @@
 :root {
 	--grey: #E0E0E0;
-	--blue: #1976D2;
 	--green: #2E7D32;
+	--green-light: #4caf50;
+	--green-dark: #1b5e20;
+	
+	--blue: #1976D2;
+	--blue-light: #03a9f4;
+	--blue-dark: #01579b;
+	--blue--transparent: hsla(210, 100%, 96%, 0.8);
 	--blue--hover: rgba(25, 118, 210, 0.04);
+	
+	--border--default: hsl(215, 15%, 92%);
+
+	--content--background: hsla(215, 15%, 97%, 0.5);
 
 	--input--border--width: 1px;
 	--input--border--type: solid;

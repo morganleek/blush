@@ -1,3 +1,5 @@
+@use "components";
+
 #projects-index {
 	.projects.root {
 		& > .root {
@@ -7,7 +9,7 @@
 				background-color: #f0f0f0;;
 			}
 			a {
-				&::before {
+				&[href]::before {
 					content: "";
 					position: absolute;
 					top: 0;
@@ -19,10 +21,26 @@
 					color: inherit;
 					text-decoration: none;
 				}
+				&.project {
+					padding: 0;
+					border: 0 none;
+					background-color: transparent;
+					text-transform: none;
+					font-weight: 500;
+					display: inline-block;
+				}
+			}
+			.wiki.description {
+				padding: 0;
+				@include components.wiki;
 			}
 		}
 	}
+	ul.projects div.root a.project {
+
+	}
 }
+
 
 fieldset#filters {
 	& > div {
@@ -50,6 +68,11 @@ fieldset#filters {
 div.issue {
 	padding: 16px;
 	background-color: #f7fff8;
+	&::before {
+		content: "";
+		display: block;
+		clear: both;
+	}
 	.attributes {
 		.attribute {
 			&.progress {
@@ -59,6 +82,19 @@ div.issue {
 			}
 		}
 	}
+}
+
+#query_form {
+	&::before {
+		content: "";
+		display: block;
+		clear: both;
+	}
+}
+
+#query_form_with_buttons {
+	margin-top: 1em;
+	margin-bottom: 1em;
 }
 
 #query_form_content {

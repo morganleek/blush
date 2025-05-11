@@ -1,15 +1,15 @@
 // @use '../../node_modules/@carbon/styles/scss/reset';
 
-// @use "reset";
-// @use "variables";
-// @use 'components';
+@use "variables";
 @use 'type';
 @use 'top-menu';
 @use 'header';
 @use 'footer';
 @use 'projects';
+@use 'content';
 @use 'admin';
 @use 'sidebar';
+@use 'calendar';
 
 @import url("/assets/application-93308368.css");
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
