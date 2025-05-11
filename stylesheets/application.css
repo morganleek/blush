@@ -10,6 +10,19 @@
   --blue-dark: #01579b;
   --blue--transparent: hsla(210, 100%, 96%, 0.8);
   --blue--hover: rgba(25, 118, 210, 0.04);
+  --blue-100: #deedfd;
+  --blue-200: #b1d0f8;
+  --blue-300: #86b1f1;
+  --blue-400: #5d8fe8;
+  --blue-500: #376bdd;
+  --blue-600: #2a59c1;
+  --blue-700: #1e48a3;
+  --red-100: #fde2dd;
+  --red-200: #f7b7ae;
+  --red-300: #ef8b81;
+  --red-400: #e55d57;
+  --red-500: #d92f2f;
+  --red-600: #be2923;
   --border--default: hsl(215, 15%, 92%);
   --content--background: hsla(215, 15%, 97%, 0.5);
   --input--border--width: 1px;
@@ -21,6 +34,15 @@
 }
 
 .icon {
+  color: var(--blue);
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  letter-spacing: 0.02857em;
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+.icon:is(a) {
   height: auto;
   padding: 6px 16px;
   border-radius: 4px;
@@ -39,13 +61,16 @@
   gap: 2px;
   transition: all 0.2s;
 }
-.icon:hover {
+.icon:is(a):hover {
   background: var(--blue--transparent);
   color: var(--blue);
   text-decoration: none;
 }
-.icon:hover svg.icon-svg {
+.icon:is(a):hover svg.icon-svg {
   stroke: var(--blue);
+}
+.icon:is(span) + span.icon {
+  margin-left: 8px;
 }
 .icon.icon-add {
   background: var(--green);
@@ -71,6 +96,12 @@
 }
 .icon .icon-label:empty {
   display: none;
+}
+.drdn .drdn-items > .icon {
+  border: 0 none;
+}
+.drdn .drdn-items > .icon:hover {
+  border: 0 none;
 }
 
 fieldset legend .icon.icon-checked {
@@ -183,7 +214,13 @@ table.list .wiki ul, table.list .wiki ol {
   padding-left: 20px;
 }
 table.issues tr.issue.priority-3 {
-  background: rgba(251, 105, 98, 0.1);
+  background: var(--red-100);
+}
+table.issues tr.issue.priority-4 {
+  background: var(--red-200);
+}
+table.issues tr.issue.priority-5 {
+  background: var(--red-300);
 }
 
 input:not([type=submit]):not([type=radio]):not([type=checkbox]) {
@@ -554,6 +591,11 @@ div.issue .attributes .attribute.progress p.percent {
   border-bottom: 2px solid var(--blue);
   box-shadow: none;
 }
+#content #activity > h3 {
+  background: transparent;
+  padding: 0;
+  margin-top: 1em;
+}
 #content #activity dl {
   margin-left: 0;
   display: flex;
@@ -565,6 +607,7 @@ div.issue .attributes .attribute.progress p.percent {
   border: 1px solid var(--blue);
   border-bottom: 0 none;
   align-items: center;
+  padding: 10px 16px 0;
 }
 #content #activity dl dt:first-child {
   border-top: 1px solid var(--blue);
@@ -576,8 +619,8 @@ div.issue .attributes .attribute.progress p.percent {
   border-radius: 0 0 4px 4px;
   margin-left: 0;
   display: block;
-  padding-top: 4px;
-  padding-bottom: 10px;
+  padding: 4px 16px 10px 40px;
+  font-size: 0.875rem;
 }
 #content .pagination .pages {
   display: flex;
@@ -640,7 +683,7 @@ div.issue .attributes .attribute.progress p.percent {
 #content .pagination .pages + span {
   display: none;
 }
-#content .tabular > p {
+#content .tabular > p, #content .tabular p {
   display: grid;
   grid-template-columns: 175px auto;
   gap: 4px 16px;
@@ -648,10 +691,10 @@ div.issue .attributes .attribute.progress p.percent {
   clear: none;
   min-height: 0;
 }
-#content .tabular > p + p {
+#content .tabular > p + p, #content .tabular p + p {
   margin-top: 0.5em;
 }
-#content .tabular > p input + span {
+#content .tabular > p input + span, #content .tabular p input + span {
   grid-column: 2/3;
 }
 #content .tabular label {
@@ -773,6 +816,11 @@ div.issue .attributes .attribute.progress p.percent {
 #sidebar a.selected {
   margin: 0;
   padding: 12px 16px;
+}
+#sidebar #sidebar-wrapper select,
+#sidebar #sidebar-wrapper input:not([type=submit]):not([type=checkbox]) {
+  display: block;
+  width: 100%;
 }
 
 .cal .calhead {

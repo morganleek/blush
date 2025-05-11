@@ -32,6 +32,11 @@
 		}
 	}
 	#activity {
+		& > h3 {
+			background: transparent;
+			padding: 0;
+			margin-top: 1em;
+		}
 		dl {
 			margin-left: 0;
 			display: flex;
@@ -42,6 +47,7 @@
 				border: 1px solid var(--blue);
 				border-bottom: 0 none;
 				align-items: center;
+				padding: 10px 16px 0;
 				&:first-child {
 					border-top: 1px solid var(--blue);
 					border-bottom: 0 none;
@@ -53,8 +59,8 @@
 				border-radius: 0 0 4px 4px;
 				margin-left: 0;
 				display: block;
-				padding-top: 4px;
-				padding-bottom: 10px;
+				padding: 4px 16px 10px 40px;
+				font-size: 0.875rem;
 			}
 		}
 	}
@@ -62,7 +68,7 @@
 		@include components.pagination;
 	}
 	.tabular {
-		& > p {
+		& > p, p {
 			display: grid;
 			grid-template-columns: 175px auto;
 			gap: 4px 16px;
