@@ -2,8 +2,7 @@
 
 #content {
 	background: var(--content--background);
-	padding-left: 25px;
-	padding-right: 25px;
+	padding: 32px 25px;
 	.tabs {
 		margin-bottom: 0;
 		ul {
@@ -116,14 +115,14 @@
 			@include components.wiki;
 		}
 	}
+	.note-header {
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
 	.time_entry {
 		.note {
 			.contextual {
 				padding-top: 8px;
-			}
-			.note-header {
-				padding-top: 10px;
-				padding-bottom: 10px;
 			}
 			.details {
 				padding-left: 20px;
@@ -134,6 +133,17 @@
 					display: block;
 				}
 			}
+		}
+	}
+	.contextual {
+		margin-top: 0;
+		margin-right: 0;
+		font-weight: 400;
+		&::before,
+		&::after {
+			content: "";
+			clear: both;
+			display: block;
 		}
 	}
 }

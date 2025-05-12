@@ -10,7 +10,7 @@
 }
 @mixin button {
 	height: auto;
-	padding: 6px 16px;
+	padding: 6px 12px;
 	border-radius: 4px;
 	color: var(--blue);
 	border: 1px solid var(--blue);
@@ -66,6 +66,9 @@
 	letter-spacing: 0.02857em;
 	border: 1px solid rgba(0, 0, 0, 0.3);
 	appearance: auto;
+	&.autocomplete {
+		padding-left: 6px !important;
+	}
 }
 
 @mixin select-wrapper {
@@ -217,6 +220,17 @@ fieldset {
 		}
 		& + span {
 			display: none;
+		}
+	}
+}
+
+.box {
+	p {
+		margin: 0.5em 0;
+	}
+	& > * {
+		&:last-child {
+			margin-bottom: 0;
 		}
 	}
 }

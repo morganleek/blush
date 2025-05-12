@@ -20,13 +20,14 @@ table {
 		box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);
 		background-image: linear-gradient(rgba(255 255 255 / 0.051), rgba(255 255 255 / 0.051));
 		th {
-			font-weight: 400;
+			font-weight: 500;
 			text-align: left;
 			line-height: 1.5rem;
 			font-size: 0.875rem;
 			padding: 16px;
 			background: #fff;
 			border: 0 none;
+			text-transform: capitalize;
 			.icon {
 				display: inline-flex;
 				padding: 0;
@@ -51,7 +52,7 @@ table {
 		}
 		td {
 			text-align: left;
-			padding: 16px;
+			padding: 12px 16px;
 			&.id {
 				text-align: left;
 			}
@@ -97,6 +98,15 @@ table {
 		}
 		
 	}
+	&.progress {
+		border-radius: 100px;
+    overflow: hidden;
+		td {
+			&.closed {
+				background: rgb(0, 202, 114) none repeat scroll 0%;
+			}
+		}
+	}
 }
 
 input:not([type="submit"]):not([type="radio"]):not([type="checkbox"]) {
@@ -128,4 +138,18 @@ select {
 	& > .icon:not(:first-child) {
 		margin-left: 0;
 	}
+}
+
+.badge {
+	position: relative;
+	font-weight: bold;
+	font-size: 0.875rem;
+	bottom: 2px;
+	padding: 4px 8px;
+	margin-right: 10px;
+	margin-left: 10px;
+	border-radius: 4px;
+	text-transform: uppercase;
+	text-decoration: none;
+	user-select: none;
 }

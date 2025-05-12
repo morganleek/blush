@@ -44,7 +44,7 @@
 }
 .icon:is(a) {
   height: auto;
-  padding: 6px 16px;
+  padding: 6px 12px;
   border-radius: 4px;
   color: var(--blue);
   border: 1px solid var(--blue);
@@ -122,6 +122,13 @@ fieldset.collapsible > legend.icon {
   border-radius: 4px;
 }
 
+.box p {
+  margin: 0.5em 0;
+}
+.box > *:last-child {
+  margin-bottom: 0;
+}
+
 :root {
   --fonts-main: "Roboto", sans-serif;
 }
@@ -142,13 +149,14 @@ table.list {
   background-image: linear-gradient(rgba(255, 255, 255, 0.051), rgba(255, 255, 255, 0.051));
 }
 table.list th {
-  font-weight: 400;
+  font-weight: 500;
   text-align: left;
   line-height: 1.5rem;
   font-size: 0.875rem;
   padding: 16px;
   background: #fff;
   border: 0 none;
+  text-transform: capitalize;
 }
 table.list th .icon {
   display: inline-flex;
@@ -171,7 +179,7 @@ table.list th a .icon-label {
 }
 table.list td {
   text-align: left;
-  padding: 16px;
+  padding: 12px 16px;
 }
 table.list td.id {
   text-align: left;
@@ -222,6 +230,13 @@ table.issues tr.issue.priority-4 {
 table.issues tr.issue.priority-5 {
   background: var(--red-300);
 }
+table.progress {
+  border-radius: 100px;
+  overflow: hidden;
+}
+table.progress td.closed {
+  background: rgb(0, 202, 114) none repeat scroll 0%;
+}
 
 input:not([type=submit]):not([type=radio]):not([type=checkbox]) {
   font-family: "Roboto", sans-serif;
@@ -236,10 +251,13 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]) {
   border: 1px solid rgba(0, 0, 0, 0.3);
   appearance: auto;
 }
+input:not([type=submit]):not([type=radio]):not([type=checkbox]).autocomplete {
+  padding-left: 6px !important;
+}
 
 input[type=submit] {
   height: auto;
-  padding: 6px 16px;
+  padding: 6px 12px;
   border-radius: 4px;
   color: var(--blue);
   border: 1px solid var(--blue);
@@ -311,12 +329,27 @@ select {
   margin-left: 0;
 }
 
+.badge {
+  position: relative;
+  font-weight: bold;
+  font-size: 0.875rem;
+  bottom: 2px;
+  padding: 4px 8px;
+  margin-right: 10px;
+  margin-left: 10px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  text-decoration: none;
+  user-select: none;
+}
+
 #top-menu {
   display: grid;
   grid-template-columns: 1fr auto;
   padding: 6px 25px;
   font-size: 1rem;
   align-items: center;
+  background-color: #181b34;
 }
 #top-menu > * {
   float: none;
@@ -355,7 +388,7 @@ select {
 }
 
 #header {
-  background: #628DB6;
+  background: #0060b9;
   min-height: 0;
   padding: 12px 25px;
   display: flex;
@@ -383,7 +416,7 @@ select {
 }
 #main-menu li a {
   height: auto;
-  padding: 6px 16px;
+  padding: 6px 12px;
   border-radius: 4px;
   color: var(--blue);
   border: 1px solid var(--blue);
@@ -436,6 +469,9 @@ select {
   border: 1px solid rgba(0, 0, 0, 0.3);
   appearance: auto;
 }
+#quick-search #q.autocomplete {
+  padding-left: 6px !important;
+}
 #quick-search form label {
   font-size: 0;
 }
@@ -456,6 +492,9 @@ select {
   letter-spacing: 0.02857em;
   border: 1px solid rgba(0, 0, 0, 0.3);
   appearance: auto;
+}
+#project-jump .drdn-trigger.autocomplete {
+  padding-left: 6px !important;
 }
 
 #footer {
@@ -536,11 +575,23 @@ fieldset#filters > div #filters-table .field {
 div.issue {
   padding: 16px;
   background-color: #f7fff8;
+  margin-top: 16px;
 }
 div.issue::before {
   content: "";
   display: block;
   clear: both;
+}
+div.issue .attributes .attribute {
+  padding-left: 0;
+  display: grid;
+  grid-template-columns: 120px 1fr;
+}
+div.issue .attributes .attribute .label {
+  width: auto;
+  margin-left: 0;
+  float: none;
+  overflow: visible;
 }
 div.issue .attributes .attribute.progress p.percent {
   line-height: 20px;
@@ -563,8 +614,7 @@ div.issue .attributes .attribute.progress p.percent {
 
 #content {
   background: var(--content--background);
-  padding-left: 25px;
-  padding-right: 25px;
+  padding: 32px 25px;
 }
 #content .tabs {
   margin-bottom: 0;
@@ -639,7 +689,7 @@ div.issue .attributes .attribute.progress p.percent {
 }
 #content .pagination .pages li a, #content .pagination .pages li span {
   height: auto;
-  padding: 6px 16px;
+  padding: 6px 12px;
   border-radius: 4px;
   color: var(--blue);
   border: 1px solid var(--blue);
@@ -747,18 +797,28 @@ div.issue .attributes .attribute.progress p.percent {
 #content .tabular .wiki.wiki-preview ul, #content .tabular .wiki.wiki-preview ol {
   padding-left: 20px;
 }
-#content .time_entry .note .contextual {
-  padding-top: 8px;
-}
-#content .time_entry .note .note-header {
+#content .note-header {
   padding-top: 10px;
   padding-bottom: 10px;
+}
+#content .time_entry .note .contextual {
+  padding-top: 8px;
 }
 #content .time_entry .note .details {
   padding-left: 20px;
   color: #333;
 }
 #content .time_entry .note .details::before {
+  content: "";
+  clear: both;
+  display: block;
+}
+#content .contextual {
+  margin-top: 0;
+  margin-right: 0;
+  font-weight: 400;
+}
+#content .contextual::before, #content .contextual::after {
   content: "";
   clear: both;
   display: block;
@@ -777,7 +837,7 @@ div.issue .attributes .attribute.progress p.percent {
 }
 #admin-menu > ul > li a {
   height: auto;
-  padding: 6px 16px;
+  padding: 6px 12px;
   border-radius: 4px;
   color: var(--blue);
   border: 1px solid var(--blue);
@@ -809,18 +869,37 @@ div.issue .attributes .attribute.progress p.percent {
   padding-bottom: 6px;
 }
 
+#login-form {
+  margin: 2em auto;
+  padding: 18px;
+  width: 320px;
+  border: 1px solid #d0d7de;
+  background: #f9fafb;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+#login-form input {
+  height: auto;
+}
+#login-form input[type=text], #login-form input[type=password] {
+  margin-bottom: 18px;
+}
+
 #sidebar {
   padding-left: 20px;
   padding-right: 20px;
-}
-#sidebar a.selected {
-  margin: 0;
-  padding: 12px 16px;
 }
 #sidebar #sidebar-wrapper select,
 #sidebar #sidebar-wrapper input:not([type=submit]):not([type=checkbox]) {
   display: block;
   width: 100%;
+}
+#sidebar ul {
+  font-size: 0.875rem;
+}
+#sidebar .icon.selected {
+  margin: 0;
+  padding-left: 12px;
+  padding-right: 12px;
 }
 
 .cal .calhead {
