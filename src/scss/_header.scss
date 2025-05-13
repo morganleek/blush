@@ -2,7 +2,9 @@
 
 #header {
 	// order: -1;
-	background: #0060b9;
+	position: sticky;
+	top: 0;
+	background: #1d2d44;
 	min-height: 0;
 	padding: 12px 25px;
 	display: flex;
@@ -17,9 +19,10 @@
 		margin: 0;
 		padding: 0;
 		font-size: 1.25rem;
-		font-weight: 300;
+		font-weight: 400;
 		order: -1;
 	}
+
 }
 
 #main-menu {
@@ -27,6 +30,11 @@
 	margin: 0;
 	left: auto;
 	bottom: auto;
+	& > ul {
+		display: flex;
+		gap: 0;
+		align-items: flex-end; 
+	}
 	li {
 		a {
 			@include components.button;
@@ -48,6 +56,19 @@
 				color: #fff; // var(--blue);
 				font-weight: 400;
 			}
+			&#new-object {
+				background-color: #3e5c76;
+				border-top: 0 none;
+				border-bottom: 0 none;
+				padding: 9px 13px;
+			}
+		}
+		.menu-children {
+			li {
+				a {
+					display: block;
+				}
+			}
 		}
 	}
 }
@@ -55,6 +76,7 @@
 #quick-search {
 	#q {
 		@include components.input-wrapper;
+		border: 0 none;
 	}
 	form {
 		label {
@@ -70,5 +92,7 @@
 #project-jump {
 	.drdn-trigger {
 		@include components.input-wrapper;
+		border: 0 none;
+		padding: 7px 6px;
 	}
 }

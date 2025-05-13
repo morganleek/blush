@@ -1,4 +1,7 @@
 :root {
+	-webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
 	--grey: #E0E0E0;
 	--green: #2E7D32;
 	--green-light: #4caf50;
@@ -36,4 +39,11 @@
 	--input--border--padding: 5px 10px;
 
 	--global--padding: 16px;
+
+	--max-width: 1200px;
+	--max-width--wide: 1440px;
+}
+
+* {
+	box-sizing: border-box;
 }

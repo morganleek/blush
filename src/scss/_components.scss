@@ -54,6 +54,23 @@
 	}
 }
 
+@mixin icon-colored( $color: var(--green), $colorSecondary: #fff, $hoverColor: var(--green-dark) ) {
+	background: $color;
+	border-color: $color;
+	color: $colorSecondary;
+	svg {
+		stroke: $colorSecondary;
+	}
+	&:hover {
+		color: $colorSecondary;
+		text-decoration: none;
+		background-color: $hoverColor;
+		svg {
+			stroke: $colorSecondary;
+		}
+	}
+}
+
 @mixin input-wrapper {
 	font-family: "Roboto", sans-serif;
 	height: 32px;
@@ -100,7 +117,8 @@
 		}
 	}
 	&.icon-add {
-		@include icon-green;
+		// @include icon-green;
+		@include icon-colored( var(--green), #fff, var(--green-dark) );
 	}
 	&.icon-checked {
 		&:has(.icon-label:empty) {
@@ -163,6 +181,7 @@ fieldset {
 	p {
 		padding: 0 !important;
 		margin: 0.8em 0;
+		font-size: 1rem;
 	}
 	pre {
 		margin-left: 0;

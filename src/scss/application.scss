@@ -2,6 +2,7 @@
 
 @use "variables";
 @use 'type';
+@use 'wrapper';
 @use 'top-menu';
 @use 'header';
 @use 'footer';
@@ -12,12 +13,13 @@
 @use 'calendar';
 
 @import url("/assets/application-93308368.css");
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 body {
-	font-family: "Roboto", sans-serif;
+	font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 300;
+  font-weight: 400;
   font-style: normal;
   font-variation-settings: "wdth" 100;
 }

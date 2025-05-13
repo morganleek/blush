@@ -3,6 +3,11 @@
 #content {
 	background: var(--content--background);
 	padding: 32px 25px;
+	// & > * {
+	// 	max-width: var(--max-width);
+	// 	margin-left: auto;
+	// 	margin-right: auto;
+	// }
 	.tabs {
 		margin-bottom: 0;
 		ul {

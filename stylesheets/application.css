@@ -1,6 +1,8 @@
 @import url("/assets/application-93308368.css");
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 :root {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   --grey: #E0E0E0;
   --green: #2E7D32;
   --green-light: #4caf50;
@@ -31,6 +33,12 @@
   --input--border--color: var(--grey);
   --input--border--padding: 5px 10px;
   --global--padding: 16px;
+  --max-width: 1200px;
+  --max-width--wide: 1440px;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 .icon {
@@ -213,6 +221,7 @@ table.list .wiki > *:last-child {
 table.list .wiki p {
   padding: 0 !important;
   margin: 0.8em 0;
+  font-size: 1rem;
 }
 table.list .wiki pre {
   margin-left: 0;
@@ -343,13 +352,17 @@ select {
   user-select: none;
 }
 
+#wrapper {
+  overflow: visible;
+}
+
 #top-menu {
   display: grid;
   grid-template-columns: 1fr auto;
-  padding: 6px 25px;
+  padding: 8px 25px;
   font-size: 1rem;
   align-items: center;
-  background-color: #181b34;
+  background-color: #0d1321;
 }
 #top-menu > * {
   float: none;
@@ -364,9 +377,15 @@ select {
 }
 #top-menu > ul li a {
   margin-right: 0;
+  display: block;
 }
 #top-menu a {
   font-weight: 300;
+  transition: color 0.2s;
+}
+#top-menu a:hover {
+  color: #748cab;
+  text-decoration: none;
 }
 #top-menu #loggedas {
   grid-area: 1/2/2/3;
@@ -388,7 +407,9 @@ select {
 }
 
 #header {
-  background: #0060b9;
+  position: sticky;
+  top: 0;
+  background: #1d2d44;
   min-height: 0;
   padding: 12px 25px;
   display: flex;
@@ -404,7 +425,7 @@ select {
   margin: 0;
   padding: 0;
   font-size: 1.25rem;
-  font-weight: 300;
+  font-weight: 400;
   order: -1;
 }
 
@@ -413,6 +434,11 @@ select {
   margin: 0;
   left: auto;
   bottom: auto;
+}
+#main-menu > ul {
+  display: flex;
+  gap: 0;
+  align-items: flex-end;
 }
 #main-menu li a {
   height: auto;
@@ -455,6 +481,15 @@ select {
   color: #fff;
   font-weight: 400;
 }
+#main-menu li a#new-object {
+  background-color: #3e5c76;
+  border-top: 0 none;
+  border-bottom: 0 none;
+  padding: 9px 13px;
+}
+#main-menu li .menu-children li a {
+  display: block;
+}
 
 #quick-search #q {
   font-family: "Roboto", sans-serif;
@@ -468,6 +503,7 @@ select {
   letter-spacing: 0.02857em;
   border: 1px solid rgba(0, 0, 0, 0.3);
   appearance: auto;
+  border: 0 none;
 }
 #quick-search #q.autocomplete {
   padding-left: 6px !important;
@@ -492,6 +528,8 @@ select {
   letter-spacing: 0.02857em;
   border: 1px solid rgba(0, 0, 0, 0.3);
   appearance: auto;
+  border: 0 none;
+  padding: 7px 6px;
 }
 #project-jump .drdn-trigger.autocomplete {
   padding-left: 6px !important;
@@ -546,6 +584,7 @@ select {
 #projects-index .projects.root > .root .wiki.description p {
   padding: 0 !important;
   margin: 0.8em 0;
+  font-size: 1rem;
 }
 #projects-index .projects.root > .root .wiki.description pre {
   margin-left: 0;
@@ -789,6 +828,7 @@ div.issue .attributes .attribute.progress p.percent {
 #content .tabular .wiki.wiki-preview p {
   padding: 0 !important;
   margin: 0.8em 0;
+  font-size: 1rem;
 }
 #content .tabular .wiki.wiki-preview pre {
   margin-left: 0;
@@ -883,6 +923,22 @@ div.issue .attributes .attribute.progress p.percent {
 #login-form input[type=text], #login-form input[type=password] {
   margin-bottom: 18px;
 }
+#login-form input[type=submit] {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: #fff;
+}
+#login-form input[type=submit] svg {
+  stroke: #fff;
+}
+#login-form input[type=submit]:hover {
+  color: #fff;
+  text-decoration: none;
+  background-color: var(--blue-700);
+}
+#login-form input[type=submit]:hover svg {
+  stroke: #fff;
+}
 
 #sidebar {
   padding-left: 20px;
@@ -901,6 +957,12 @@ div.issue .attributes .attribute.progress p.percent {
   padding-left: 12px;
   padding-right: 12px;
 }
+#sidebar #sidebar-switch-panel {
+  padding-right: 0;
+}
+#sidebar #sidebar-switch-panel #sidebar-switch-button {
+  padding-right: 0;
+}
 
 .cal .calhead {
   text-align: right;
@@ -916,9 +978,9 @@ div.issue .attributes .attribute.progress p.percent {
 }
 
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 300;
+  font-weight: 400;
   font-style: normal;
   font-variation-settings: "wdth" 100;
 }
