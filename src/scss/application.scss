@@ -1,18 +1,21 @@
 // @use '../../node_modules/@carbon/styles/scss/reset';
 
+
 @use "variables";
-@use 'type';
-@use 'wrapper';
-@use 'top-menu';
-@use 'header';
-@use 'footer';
-@use 'projects';
-@use 'content';
-@use 'admin';
-@use 'sidebar';
-@use 'calendar';
+@use "type";
+@use "wrapper";
+@use "top-menu";
+@use "header";
+@use "footer";
+@use "projects";
+@use "content";
+@use "admin";
+@use "sidebar";
+@use "calendar";
+@use "my-page";
 
 @import url("/assets/application-93308368.css");
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 // @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 

@@ -6,12 +6,13 @@
 	top: 0;
 	background: #1d2d44;
 	min-height: 0;
-	padding: 12px 25px;
+	padding: 22px 25px;
 	display: flex;
 	flex-wrap: wrap;
 	gap: 16px 8px;
 	justify-content: space-between;
 	align-items: center;
+	z-index: 99;
 	&:has(> #main-menu) {
 		padding-bottom: 0;
 	}
@@ -74,11 +75,15 @@
 }
 
 #quick-search {
+	display: flex;
+	gap: 6px;
 	#q {
 		@include components.input-wrapper;
 		border: 0 none;
+		float: none;
 	}
 	form {
+		float: none;
 		label {
 			font-size: 0;
 			a {

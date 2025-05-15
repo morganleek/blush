@@ -19,13 +19,20 @@ table {
     border-spacing: 0px;
 		box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);
 		background-image: linear-gradient(rgba(255 255 255 / 0.051), rgba(255 255 255 / 0.051));
+		thead {
+			tr {
+				th, td {
+					background: #eef0f2;
+				}
+			}
+		}
 		th {
 			font-weight: 500;
 			text-align: left;
 			line-height: 1.5rem;
 			font-size: 0.875rem;
 			padding: 16px;
-			background: #fff;
+			// background: #fff;
 			border: 0 none;
 			text-transform: capitalize;
 			.icon {
@@ -53,6 +60,7 @@ table {
 		td {
 			text-align: left;
 			padding: 12px 16px;
+			border: 0 none;
 			&.id {
 				text-align: left;
 			}
@@ -104,6 +112,23 @@ table {
 		td {
 			&.closed {
 				background: rgb(0, 202, 114) none repeat scroll 0%;
+			}
+		}
+	}
+	&.time-entries {
+		td {
+			&.hours {
+				text-align: left;
+			}
+		}
+	}
+	
+	th, td {
+		position: relative;
+		border: 0 none;
+		a {
+			&:only-child {
+				display: block;
 			}
 		}
 	}

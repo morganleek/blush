@@ -3,6 +3,7 @@
 #projects-index {
 	.projects.root {
 		& > .root {
+			@include components.card;
 			position: relative;
 			transition: background-color 0.2s;
 			&:hover {
@@ -55,8 +56,12 @@ fieldset#filters {
 			.filter {
 				margin: 0;
 				align-items: center;
+				& + .filter {
+					margin-top: 4px;
+				}
 			}
 			.field {
+				min-width: 100px;
 				width: auto;
 				display: flex;
 				align-items: center;

@@ -10,10 +10,25 @@
 	// }
 	.tabs {
 		margin-bottom: 0;
+		height: auto;
 		ul {
+			display: flex;
 			border-bottom: 1px solid var(--border--default);
 			padding: 0;
+			position: relative;
+			left: auto;
+			bottom: auto;
+			right: auto;
+			top: auto;
+			min-width: 0;
+			width: auto;
+			align-items: center;
 			li {
+				float: none;
+				margin: 0;
+				&::before {
+					display: none;
+				}
 				a {
 					border: 0 none;
 					border-bottom: 2px solid transparent;
@@ -26,11 +41,24 @@
 					letter-spacing: 0.02857em;
 					text-transform: uppercase;
 					text-decoration: none;
+					display: block;
 					&.selected {
 						border: 0 none;
 						border-bottom: 2px solid var(--blue);
 						box-shadow: none;
 					}
+				}
+			}
+		}
+		&.jstTabs {
+			margin-bottom: 0 !important;
+			ul li {
+				height: auto;
+				&::before {
+					display: none;
+				}
+				a {
+					display: block;
 				}
 			}
 		}
@@ -82,7 +110,10 @@
 			& + p {
 				margin-top: 0.5em;
 			}
-			input + span {
+			input + span, 
+			input + em,
+			.assign-to-me-link, 
+			&#watchers_form .search_for_watchers {
 				grid-column: 2 / 3;
 			}
 		}
@@ -150,5 +181,8 @@
 			clear: both;
 			display: block;
 		}
+	}
+	#context-menu {
+		@include components.context-menu;
 	}
 }

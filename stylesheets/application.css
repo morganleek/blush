@@ -53,7 +53,7 @@
 .icon:is(a) {
   height: auto;
   padding: 6px 12px;
-  border-radius: 4px;
+  border-radius: var(--input--border--radius);
   color: var(--blue);
   border: 1px solid var(--blue);
   background: #fff;
@@ -96,6 +96,9 @@
 .icon.icon-add:hover svg {
   stroke: #fff;
 }
+.icon.icon-add:is(a):hover svg {
+  stroke: #fff;
+}
 .icon.icon-checked:has(.icon-label:empty) {
   padding: 2px;
 }
@@ -124,17 +127,39 @@ fieldset.collapsible > legend.icon {
   border: 0 none;
 }
 
-.nodata, .warning {
-  padding-top: 16px;
-  padding-bottom: 16px;
-  border-radius: 4px;
+#errorExplanation,
+div.flash,
+.nodata,
+.warning,
+.conflict {
+  padding: 16px 32px;
+  border-radius: var(--input--border--radius);
+  font-size: 1rem;
+}
+#errorExplanation svg.icon-svg,
+div.flash svg.icon-svg,
+.nodata svg.icon-svg,
+.warning svg.icon-svg,
+.conflict svg.icon-svg {
+  margin-left: 0;
 }
 
+.box {
+  border-radius: 12px;
+  padding: 16px;
+}
 .box p {
   margin: 0.5em 0;
 }
 .box > *:last-child {
   margin-bottom: 0;
+}
+
+.controller-timelog .query-totals {
+  font-size: 0.875rem;
+  display: block;
+  float: none;
+  padding-top: 10px;
 }
 
 :root {
@@ -156,13 +181,15 @@ table.list {
   box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
   background-image: linear-gradient(rgba(255, 255, 255, 0.051), rgba(255, 255, 255, 0.051));
 }
+table.list thead tr th, table.list thead tr td {
+  background: #eef0f2;
+}
 table.list th {
   font-weight: 500;
   text-align: left;
   line-height: 1.5rem;
   font-size: 0.875rem;
   padding: 16px;
-  background: #fff;
   border: 0 none;
   text-transform: capitalize;
 }
@@ -188,6 +215,7 @@ table.list th a .icon-label {
 table.list td {
   text-align: left;
   padding: 12px 16px;
+  border: 0 none;
 }
 table.list td.id {
   text-align: left;
@@ -210,7 +238,7 @@ table.list th.buttons, table.list td.buttons {
 table.list .wiki {
   padding: 0;
   width: auto;
-  border-radius: 4px;
+  border-radius: var(--input--border--radius);
 }
 table.list .wiki > *:first-child {
   margin-top: 0;
@@ -222,6 +250,7 @@ table.list .wiki p {
   padding: 0 !important;
   margin: 0.8em 0;
   font-size: 1rem;
+  display: block;
 }
 table.list .wiki pre {
   margin-left: 0;
@@ -246,12 +275,22 @@ table.progress {
 table.progress td.closed {
   background: rgb(0, 202, 114) none repeat scroll 0%;
 }
+table.time-entries td.hours {
+  text-align: left;
+}
+table th, table td {
+  position: relative;
+  border: 0 none;
+}
+table th a:only-child, table td a:only-child {
+  display: block;
+}
 
 input:not([type=submit]):not([type=radio]):not([type=checkbox]) {
   font-family: "Roboto", sans-serif;
   height: 32px;
   padding: 6px 6px 6px 6px;
-  border-radius: 4px;
+  border-radius: var(--input--border--radius);
   background: #fff;
   font-weight: 400;
   font-size: 0.875rem;
@@ -263,11 +302,14 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]) {
 input:not([type=submit]):not([type=radio]):not([type=checkbox]).autocomplete {
   padding-left: 6px !important;
 }
+input:not([type=submit]):not([type=radio]):not([type=checkbox])[type=file] {
+  height: 35px;
+}
 
 input[type=submit] {
   height: auto;
   padding: 6px 12px;
-  border-radius: 4px;
+  border-radius: var(--input--border--radius);
   color: var(--blue);
   border: 1px solid var(--blue);
   background: #fff;
@@ -299,12 +341,12 @@ input[type=submit][value=Create] {
 input[type=submit][value=Create] svg {
   stroke: #fff;
 }
-input[type=submit][value=Create]:hover {
+input[type=submit][value=Create]:is(a):hover {
   color: #fff;
   text-decoration: none;
   background-color: var(--green-dark);
 }
-input[type=submit][value=Create]:hover svg {
+input[type=submit][value=Create]:is(a):hover svg {
   stroke: #fff;
 }
 
@@ -316,7 +358,7 @@ select {
   font-family: "Roboto", sans-serif;
   height: auto;
   padding: 6px 6px 6px 6px;
-  border-radius: 4px;
+  border-radius: var(--input--border--radius);
   background: #fff;
   font-weight: 400;
   font-size: 0.875rem;
@@ -411,12 +453,13 @@ select {
   top: 0;
   background: #1d2d44;
   min-height: 0;
-  padding: 12px 25px;
+  padding: 22px 25px;
   display: flex;
   flex-wrap: wrap;
   gap: 16px 8px;
   justify-content: space-between;
   align-items: center;
+  z-index: 99;
 }
 #header:has(> #main-menu) {
   padding-bottom: 0;
@@ -443,7 +486,7 @@ select {
 #main-menu li a {
   height: auto;
   padding: 6px 12px;
-  border-radius: 4px;
+  border-radius: var(--input--border--radius);
   color: var(--blue);
   border: 1px solid var(--blue);
   background: #fff;
@@ -491,11 +534,15 @@ select {
   display: block;
 }
 
+#quick-search {
+  display: flex;
+  gap: 6px;
+}
 #quick-search #q {
   font-family: "Roboto", sans-serif;
   height: 32px;
   padding: 6px 6px 6px 6px;
-  border-radius: 4px;
+  border-radius: var(--input--border--radius);
   background: #fff;
   font-weight: 400;
   font-size: 0.875rem;
@@ -504,9 +551,16 @@ select {
   border: 1px solid rgba(0, 0, 0, 0.3);
   appearance: auto;
   border: 0 none;
+  float: none;
 }
 #quick-search #q.autocomplete {
   padding-left: 6px !important;
+}
+#quick-search #q[type=file] {
+  height: 35px;
+}
+#quick-search form {
+  float: none;
 }
 #quick-search form label {
   font-size: 0;
@@ -520,7 +574,7 @@ select {
   font-family: "Roboto", sans-serif;
   height: 32px;
   padding: 6px 6px 6px 6px;
-  border-radius: 4px;
+  border-radius: var(--input--border--radius);
   background: #fff;
   font-weight: 400;
   font-size: 0.875rem;
@@ -534,6 +588,9 @@ select {
 #project-jump .drdn-trigger.autocomplete {
   padding-left: 6px !important;
 }
+#project-jump .drdn-trigger[type=file] {
+  height: 35px;
+}
 
 #footer {
   background: #fff;
@@ -544,6 +601,8 @@ select {
 }
 
 #projects-index .projects.root > .root {
+  border-radius: 12px;
+  padding: 16px;
   position: relative;
   transition: background-color 0.2s;
 }
@@ -573,7 +632,7 @@ select {
 #projects-index .projects.root > .root .wiki.description {
   padding: 0;
   width: auto;
-  border-radius: 4px;
+  border-radius: var(--input--border--radius);
 }
 #projects-index .projects.root > .root .wiki.description > *:first-child {
   margin-top: 0;
@@ -585,6 +644,7 @@ select {
   padding: 0 !important;
   margin: 0.8em 0;
   font-size: 1rem;
+  display: block;
 }
 #projects-index .projects.root > .root .wiki.description pre {
   margin-left: 0;
@@ -605,7 +665,11 @@ fieldset#filters > div #filters-table .filter {
   margin: 0;
   align-items: center;
 }
+fieldset#filters > div #filters-table .filter + .filter {
+  margin-top: 4px;
+}
 fieldset#filters > div #filters-table .field {
+  min-width: 100px;
   width: auto;
   display: flex;
   align-items: center;
@@ -657,10 +721,27 @@ div.issue .attributes .attribute.progress p.percent {
 }
 #content .tabs {
   margin-bottom: 0;
+  height: auto;
 }
 #content .tabs ul {
+  display: flex;
   border-bottom: 1px solid var(--border--default);
   padding: 0;
+  position: relative;
+  left: auto;
+  bottom: auto;
+  right: auto;
+  top: auto;
+  min-width: 0;
+  width: auto;
+  align-items: center;
+}
+#content .tabs ul li {
+  float: none;
+  margin: 0;
+}
+#content .tabs ul li::before {
+  display: none;
 }
 #content .tabs ul li a {
   border: 0 none;
@@ -674,11 +755,24 @@ div.issue .attributes .attribute.progress p.percent {
   letter-spacing: 0.02857em;
   text-transform: uppercase;
   text-decoration: none;
+  display: block;
 }
 #content .tabs ul li a.selected {
   border: 0 none;
   border-bottom: 2px solid var(--blue);
   box-shadow: none;
+}
+#content .tabs.jstTabs {
+  margin-bottom: 0 !important;
+}
+#content .tabs.jstTabs ul li {
+  height: auto;
+}
+#content .tabs.jstTabs ul li::before {
+  display: none;
+}
+#content .tabs.jstTabs ul li a {
+  display: block;
 }
 #content #activity > h3 {
   background: transparent;
@@ -729,7 +823,7 @@ div.issue .attributes .attribute.progress p.percent {
 #content .pagination .pages li a, #content .pagination .pages li span {
   height: auto;
   padding: 6px 12px;
-  border-radius: 4px;
+  border-radius: var(--input--border--radius);
   color: var(--blue);
   border: 1px solid var(--blue);
   background: #fff;
@@ -783,7 +877,11 @@ div.issue .attributes .attribute.progress p.percent {
 #content .tabular > p + p, #content .tabular p + p {
   margin-top: 0.5em;
 }
-#content .tabular > p input + span, #content .tabular p input + span {
+#content .tabular > p input + span,
+#content .tabular > p input + em,
+#content .tabular > p .assign-to-me-link, #content .tabular > p#watchers_form .search_for_watchers, #content .tabular p input + span,
+#content .tabular p input + em,
+#content .tabular p .assign-to-me-link, #content .tabular p#watchers_form .search_for_watchers {
   grid-column: 2/3;
 }
 #content .tabular label {
@@ -817,7 +915,7 @@ div.issue .attributes .attribute.progress p.percent {
 #content .tabular .wiki.wiki-preview {
   padding: 16px;
   width: auto;
-  border-radius: 4px;
+  border-radius: var(--input--border--radius);
 }
 #content .tabular .wiki.wiki-preview > *:first-child {
   margin-top: 0;
@@ -829,6 +927,7 @@ div.issue .attributes .attribute.progress p.percent {
   padding: 0 !important;
   margin: 0.8em 0;
   font-size: 1rem;
+  display: block;
 }
 #content .tabular .wiki.wiki-preview pre {
   margin-left: 0;
@@ -863,6 +962,33 @@ div.issue .attributes .attribute.progress p.percent {
   clear: both;
   display: block;
 }
+#content #context-menu {
+  z-index: 100;
+}
+#content #context-menu ul {
+  padding: 0;
+}
+#content #context-menu ul li a {
+  height: auto;
+  padding: 6px 12px;
+  border-radius: 0;
+  color: var(--blue);
+  background: #fff;
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 1.2em;
+  letter-spacing: 0;
+  text-transform: none;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  transition: all 0.2s;
+}
+#content #context-menu.reverse-x ul li.folder > ul {
+  right: 144px;
+  bottom: -1px;
+}
 
 #admin-menu > ul {
   display: grid;
@@ -878,7 +1004,7 @@ div.issue .attributes .attribute.progress p.percent {
 #admin-menu > ul > li a {
   height: auto;
   padding: 6px 12px;
-  border-radius: 4px;
+  border-radius: var(--input--border--radius);
   color: var(--blue);
   border: 1px solid var(--blue);
   background: #fff;
@@ -939,6 +1065,9 @@ div.issue .attributes .attribute.progress p.percent {
 #login-form input[type=submit]:hover svg {
   stroke: #fff;
 }
+#login-form input[type=submit]:is(a):hover svg {
+  stroke: #fff;
+}
 
 #sidebar {
   padding-left: 20px;
@@ -975,6 +1104,11 @@ div.issue .attributes .attribute.progress p.percent {
 }
 .cal .calbody div.issue {
   padding: 6px;
+}
+
+#my-page .mypage-box {
+  border-radius: 12px;
+  padding: 16px;
 }
 
 body {

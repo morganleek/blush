@@ -1,0 +1,7 @@
+@use "components";
+
+#my-page {
+	.mypage-box {
+		@include components.card;
+	}
+}
