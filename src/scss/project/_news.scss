@@ -1,0 +1,8 @@
+@use "../components";
+
+#add-news {
+	margin-bottom: 1em;
+	& > h2 {
+		@include components.page-header;
+	}
+}

@@ -24,4 +24,10 @@
 			padding-right: 0;
 		}
 	}
+	a {
+		&.selected {
+			background: transparent;
+			color: #555;
+		}
+	}
 }

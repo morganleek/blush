@@ -23,6 +23,7 @@
 					text-decoration: none;
 				}
 				&.project {
+					color: var(--muidocs-palette-primary-500);
 					padding: 0;
 					border: 0 none;
 					background-color: transparent;
@@ -52,20 +53,24 @@ fieldset#filters {
 			float: none;
 			width: auto;
 		}
-		#filters-table {
-			.filter {
-				margin: 0;
-				align-items: center;
-				& + .filter {
-					margin-top: 4px;
-				}
-			}
-			.field {
-				min-width: 100px;
-				width: auto;
-				display: flex;
-				align-items: center;
-			}
+	}
+	#filters-table {
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: column;
+		gap: 4px;
+		.filter {
+			margin: 0;
+			align-items: center;
+			// & + .filter {
+			// 	margin-top: 4px;
+			// }
+		}
+		.field {
+			min-width: 100px;
+			width: auto;
+			display: flex;
+			align-items: center;
 		}
 	}
 }
@@ -113,6 +118,9 @@ div.issue {
 #query_form_with_buttons {
 	margin-top: 1em;
 	margin-bottom: 1em;
+	& > p.contextual {
+		@include components.button-group;
+	}
 }
 
 #query_form_content {

@@ -10,11 +10,15 @@ h1, h2, h3, h4, h5, h6 {
 	margin: 0 0 0.6em;
 }
 
+a, a:link {
+	color: var(--muidocs-palette-primary-700);
+}
+
 table {
 	&.list {
 		font-size: 0.875rem;
 		border: 0 none;
-		border-radius: 4px;
+		border-radius: 10px;
 		border-collapse: collapse;
     border-spacing: 0px;
 		box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);
@@ -22,16 +26,17 @@ table {
 		thead {
 			tr {
 				th, td {
-					background: #eef0f2;
+					background: #fff;
+					border-bottom: 1px solid var(--mui-palette-TableCell-border, rgba(224, 224, 224, 1));
 				}
 			}
 		}
 		th {
-			font-weight: 500;
+			font-weight: 600;
 			text-align: left;
 			line-height: 1.5rem;
 			font-size: 0.875rem;
-			padding: 16px;
+			padding: 14px 16px;
 			// background: #fff;
 			border: 0 none;
 			text-transform: capitalize;
@@ -95,13 +100,13 @@ table {
 			// 	background: var(--blue-100);
 			// }
 			&.priority-3 {
-				background: var(--red-100); // rgba(251,105,98, 0.1);
+				background: var(--muidocs-palette-error-100); // rgba(251,105,98, 0.1);
 			}
 			&.priority-4 {
-				background: var(--red-200); // rgba(251,105,98, 0.1);
+				background: var(--muidocs-palette-error-200); // rgba(251,105,98, 0.1);
 			}
 			&.priority-5 {
-				background: var(--red-300); // rgba(251,105,98, 0.1);
+				background: var(--muidocs-palette-error-300); // rgba(251,105,98, 0.1);
 			}
 		}
 		
@@ -134,6 +139,12 @@ table {
 	}
 }
 
+table.list:not(.odd-even) tbody tr:nth-child(even), 
+.even, 
+#issue-changesets div.changeset:nth-child(even) {
+	background-color: var(--muidocs-palette-secondary-50);
+}
+
 input:not([type="submit"]):not([type="radio"]):not([type="checkbox"]) {
 	@include components.input-wrapper;
 }
@@ -147,6 +158,8 @@ input[type="submit"] {
 
 textarea {
 	padding: 10px 6px;
+	border-radius: var(--input--border--radius);
+	border: 1px solid rgba(0, 0, 0, 0.3);
 }
 
 select {
@@ -154,12 +167,12 @@ select {
 }
 
 .buttons {
+	@include components.button-group;
 	font-size: 0.875rem;
 	display: flex;
+	flex-wrap: wrap;
 	align-items: center;
 	gap: 6px;
-	margin-top: 1em;
-	margin-bottom: 1em;
 	& > .icon:not(:first-child) {
 		margin-left: 0;
 	}

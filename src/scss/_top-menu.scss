@@ -4,7 +4,7 @@
 	padding: 8px 25px;
 	font-size: 1rem;
 	align-items: center;
-	background-color: #0d1321;
+	background-color: var(--muidocs-palette-secondary-900);
 	// background-color: var(--blue--transparent);
 	& > * {
 		float: none;
@@ -28,7 +28,7 @@
 			color: #748cab;
 			text-decoration: none;
 		}
-		// color: var(--blue);
+		// color: var(--muidocs-palette-primary-500);
 	}
 	#loggedas {
 		grid-area: 1 / 2 / 2 / 3;

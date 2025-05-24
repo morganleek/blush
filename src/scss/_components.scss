@@ -1,6 +1,6 @@
 @mixin icon {
-	color: var(--blue);
-	text-transform: uppercase;
+	color: var(--muidocs-palette-primary-500);
+	// text-transform: uppercase;
 	font-size: 0.875rem;
 	// line-height: 1.75;
 	letter-spacing: 0.02857em;
@@ -10,45 +10,69 @@
 }
 @mixin button {
 	height: auto;
-	padding: 6px 12px;
+	padding: var(--input--border--padding);
 	border-radius: var(--input--border--radius);
-	color: var(--blue);
-	border: 1px solid var(--blue);
-	background: #fff; // var(--grey);
-	text-transform: uppercase;
-	font-weight: 500;
-	font-size: 0.875rem;
+	color: #fff;
+	border: 1px solid var(--muidocs-palette-primary-600);
+	background: var(--muidocs-palette-primary-500); // var(--grey);
+	font-weight: 400;
+	font-size: 1rem; // 0.875rem;
 	line-height: 1.75;
-	letter-spacing: 0.02857em;
-	text-transform: uppercase;
+	letter-spacing: 0; // 0.02857em;
 	text-decoration: none;
 	display: inline-flex;
 	align-items: center;
+	justify-content: center;
 	gap: 2px;
 	transition: all 0.2s;
+	// text-transform: uppercase;
 	// box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.14);
+	position: relative;
+	-webkit-tap-highlight-color: transparent;
+	text-shadow: rgba(9, 11, 11, 0.6) 0px 1px 1px;
+	// box-shadow: rgba(51, 153, 255, 0.5) 0px 1px 0px inset, rgba(0, 77, 153, 0.4) 0px -1px 0px 1px inset, rgba(9, 11, 11, 0.1) 0px 2px 4px 0px;
+	svg.icon-svg {
+		stroke: #fff;
+		&.s12 {
+			width: 1.25rem;
+			height: 1.25rem;
+		}
+	}
 	&:hover {
-		background: var(--blue--transparent);
-		color: var(--blue);
+		background: var(--muidocs-palette-primary-700);
+		// color: var(--muidocs-palette-primary-700);
 		text-decoration: none;
-		svg.icon-svg {
-			stroke: var(--blue);
+		// svg.icon-svg {
+		// 	stroke: var(--muidocs-palette-primary-700);
+		// }
+	}
+	&.icon-del {
+		color: #fff;
+		border: 1px solid var(--muidocs-palette-error-700);
+		background: var(--muidocs-palette-error-600); // var(--grey);
+		&:hover {
+			background: var(--muidocs-palette-error-800);
 		}
 	}
 }
 
+@mixin button-group {
+	margin-top: 12px;
+	margin-bottom: 12px;
+}
+
 @mixin icon-green {
-	background: var(--green);
-	border-color: var(--green);
+	background: var(--muidocs-palette-success-700);
+	border-color: var(--muidocs-palette-success-700);
 	color: #fff;
 	svg {
 		stroke: #fff;
 	}
-	&:is(a) {
+	&:is(a), &:is(a:link) {
 		&:hover {
 			color: #fff;
 			text-decoration: none;
-			background-color: var(--green-dark);
+			background-color: var(--muidocs-palette-success-800);
 			svg {
 				stroke: #fff;
 			}
@@ -56,7 +80,7 @@
 	}
 }
 
-@mixin icon-colored( $color: var(--green), $colorSecondary: #fff, $hoverColor: var(--green-dark) ) {
+@mixin icon-colored( $color: var(--muidocs-palette-success-700), $colorSecondary: #fff, $hoverColor: var(--muidocs-palette-success-800) ) {
 	background: $color;
 	border-color: $color;
 	color: $colorSecondary;
@@ -71,7 +95,7 @@
 			stroke: $colorSecondary;
 		}
 	}
-	&:is(a) {
+	&:is(a), &:is(a:link) {
 		&:hover {
 			svg {
 				stroke: $colorSecondary;
@@ -82,8 +106,8 @@
 
 @mixin input-wrapper {
 	font-family: "Roboto", sans-serif;
-	height: 32px;
-	padding: 6px 6px 6px 6px;
+	height: 44px;
+	padding: 6px 10px;
 	border-radius: var(--input--border--radius);
 	background: #fff;
 	font-weight: 400;
@@ -92,18 +116,22 @@
 	letter-spacing: 0.02857em;
 	border: 1px solid rgba(0, 0, 0, 0.3);
 	appearance: auto;
+	margin-top: 0;
+	margin-bottom: 0;
 	&.autocomplete {
-		padding-left: 6px !important;
+		padding-left: 10px !important;
 	}
 	&[type="file"] {
-		height: 35px;
+		height: 44px;
+		padding-top: 10px;
+		padding-bottom: 10px;
 	}
 }
 
 @mixin select-wrapper {
 	font-family: "Roboto", sans-serif;
-	height: auto;
-	padding: 6px 6px 6px 6px;
+	height: 42px;
+	padding: 6px 10px;
 	border-radius: var(--input--border--radius);
 	background: #fff;
 	font-weight: 400;
@@ -112,6 +140,8 @@
 	letter-spacing: 0.02857em;
 	border: 1px solid rgba(0, 0, 0, 0.3);
 	appearance: auto;
+	margin-top: 0;
+	margin-bottom: 0;
 }
 
 // a[href].icon {
@@ -120,7 +150,7 @@
 
 .icon {
 	@include icon;
-	&:is(a) {
+	&:is(a), &:is(a:link) {
 		@include button;
 	}
 	&:is(span) {
@@ -129,7 +159,7 @@
 		}
 	}
 	&.icon-add {
-		@include icon-colored( var(--green), #fff, var(--green-dark) );
+		@include icon-colored( var(--muidocs-palette-success-700), #fff, var(--muidocs-palette-success-800) );
 	}
 	&.icon-checked {
 		&:has(.icon-label:empty) {
@@ -138,6 +168,7 @@
 	}
 	&.icon-label {
 		margin-left: 0;
+		white-space: nowrap;
 	}
 	.icon-label {
 		&:empty {
@@ -178,6 +209,17 @@ fieldset {
 	font-size: 1rem;
 	svg.icon-svg {
 		margin-left: 0;
+	}
+	&:has(svg) > svg.icon-svg {
+		margin: 0;
+		position: relative;
+		top: auto;
+		right: auto;
+	}
+	ul {
+		margin-top: 0;
+		margin-bottom: 0;
+		display: inline-block;
 	}
 }
 
@@ -240,12 +282,14 @@ div.flash,
 			}
 			&:first-child {
 				a, span {
-					border-radius: 4px 0 0 4px;
+					border-top-left-radius: var(--input--border--radius);
+					border-bottom-left-radius: var(--input--border--radius);
 				}
 			}
 			&:last-child {
 				a, span {
-					border-radius: 0 4px 4px 0;
+					border-top-right-radius: var(--input--border--radius);
+					border-bottom-right-radius: var(--input--border--radius);
 					border-right: 1px solid;
 				}
 			}
@@ -305,7 +349,7 @@ div.flash,
 				height: auto;
 				padding: 6px 12px;
 				border-radius: 0;
-				color: var(--blue);
+				color: var(--muidocs-palette-primary-500);
 				background: #fff;
 				font-weight: 500;
 				font-size: 0.875rem;
@@ -332,4 +376,34 @@ div.flash,
 			}
 		}
 	}
+}
+
+@mixin label-on-top {
+	position: relative;
+	label {
+		position: absolute;
+		font-size: 0.8125rem;
+    top: 0px; // border space
+    left: 5px;
+		transform: translate(0, -50%);
+    background: #fff;
+    padding-left: 5px;
+    padding-right: 5px;
+		background: linear-gradient(180deg,var(--content--background) 50%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 1) 100%);
+		transition: color 0.1s;
+		line-height: 1em;
+	}
+	&:has(select:focus-within) {
+		label {
+			color: #33333380;
+		}
+	}
+}
+
+.add-filter {
+	@include label-on-top;
+}
+
+@mixin page-header {
+	min-height: 42px;
 }
