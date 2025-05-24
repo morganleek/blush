@@ -211,7 +211,7 @@ fieldset {
 		margin-left: 0;
 	}
 	&:has(svg) > svg.icon-svg {
-		margin: 0;
+		margin: 0 0 0 2px;
 		position: relative;
 		top: auto;
 		right: auto;
@@ -345,9 +345,16 @@ div.flash,
 	ul {
 		padding: 0;
 		li {
+			border: 0 none;
+			&:hover {
+				border: 0 none;
+				& > a {
+					background: #eef5fd;
+				}
+			}
 			a {
 				height: auto;
-				padding: 6px 12px;
+				padding: 6px 8px;
 				border-radius: 0;
 				color: var(--muidocs-palette-primary-500);
 				background: #fff;
@@ -357,10 +364,15 @@ div.flash,
 				letter-spacing: 0;
 				text-transform: none;
 				text-decoration: none;
+				text-shadow: none;
 				display: inline-flex;
 				align-items: center;
+				justify-content: flex-start;
 				gap: 2px;
 				transition: all 0.2s;
+				svg.icon-svg {
+					stroke: var(--muidocs-palette-primary-500);
+				}
 			}
 		}
 	}
