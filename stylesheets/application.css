@@ -878,8 +878,6 @@ select {
   border: 0 none;
   float: none;
   transition: all 0.2s;
-  width: 40px;
-  background: transparent;
 }
 #quick-search #q.autocomplete {
   padding-left: 10px !important;
@@ -888,21 +886,6 @@ select {
   height: 44px;
   padding-top: 10px;
   padding-bottom: 10px;
-}
-#quick-search #q:focus {
-  border: 2px solid lime;
-}
-#quick-search #q:focus-visible {
-  border: 2px solid purple;
-}
-#quick-search #q:focus-within {
-  border: 2px solid pink;
-}
-#quick-search #q:active {
-  border: 2px solid palegoldenrod;
-}
-#quick-search #q::before {
-  content: "";
 }
 #quick-search form {
   float: none;
@@ -940,6 +923,12 @@ select {
   height: 44px;
   padding-top: 10px;
   padding-bottom: 10px;
+}
+#project-jump .drdn-content {
+  top: calc(100% + 6px);
+}
+#project-jump .drdn-content #projects-quick-search {
+  padding-left: 26px !important;
 }
 
 #footer {

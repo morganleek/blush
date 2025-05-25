@@ -80,30 +80,28 @@
 #quick-search {
 	display: flex;
 	gap: 6px;
+	// form {
+	// 	position: relative;
+	// 	&::before {
+	// 		content: "";
+	// 		width: 40px;
+	// 		height: 40px;
+	// 		position: absolute;
+	// 		top: 0;
+	// 		right: 0;
+	// 		pointer-events: none;
+	// 	}
+	// }
 	#q {
 		@include components.input-wrapper;
 		border: 0 none;
 		float: none;
 		transition: all 0.2s;
-    width: 40px;
-    background: transparent;
-		// opacity: 0.5;
-		&:focus {
-			border: 2px solid lime;
-		}
-		&:focus-visible {
-			border: 2px solid purple;
-		}
-		&:focus-within {
-			border: 2px solid pink;
-		}
-		&:active {
-			border: 2px solid palegoldenrod;
-		}
-		&::before {
-			content: "";
-			
-		}
+		// &:not(:focus-within) {
+		// 	width: 40px;
+		// 	background: transparent;
+		// 	color: transparent;	
+		// }
 	}
 	form {
 		float: none;
@@ -123,5 +121,11 @@
 		display: inline-flex;
 		align-items: center;
 		border: 0 none;
+	}
+	.drdn-content {
+		top: calc(100% + 6px);
+		#projects-quick-search {
+			padding-left: 26px !important;
+		}
 	}
 }
