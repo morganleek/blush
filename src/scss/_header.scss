@@ -84,6 +84,26 @@
 		@include components.input-wrapper;
 		border: 0 none;
 		float: none;
+		transition: all 0.2s;
+    width: 40px;
+    background: transparent;
+		// opacity: 0.5;
+		&:focus {
+			border: 2px solid lime;
+		}
+		&:focus-visible {
+			border: 2px solid purple;
+		}
+		&:focus-within {
+			border: 2px solid pink;
+		}
+		&:active {
+			border: 2px solid palegoldenrod;
+		}
+		&::before {
+			content: "";
+			
+		}
 	}
 	form {
 		float: none;
