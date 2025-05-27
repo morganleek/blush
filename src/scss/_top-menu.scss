@@ -6,6 +6,14 @@
 	align-items: center;
 	background-color: var(--muidocs-palette-secondary-900);
 	// background-color: var(--blue--transparent);
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	a {
+		color: #fff;
+	}
 	& > * {
 		float: none;
 	}

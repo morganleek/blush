@@ -1,7 +1,11 @@
 #sidebar {
-	padding-left: 20px;
-	padding-right: 20px;
+	width: min(20%, 360px);
+	padding: 0px;
+	position: relative;
+	background: var(--muidocs-palette-primary-50);
+	border-left: 2px solid var(--muidocs-palette-primary-300);
 	#sidebar-wrapper {
+		padding: 32px 20px;
 		select, 
 		input:not([type="submit"]):not([type="checkbox"]) {
 			display: block;
@@ -10,6 +14,16 @@
 	}
 	ul {
 		font-size: 0.875rem;
+		list-style: none;
+    padding-left: 0; // 20px;
+		li {
+			a {
+				line-height: 1.4em;
+				& + a {
+					margin-left: 4px;
+				}
+			}
+		}
 	}
 	.icon {
 		&.selected {
@@ -20,8 +34,21 @@
 	}
 	#sidebar-switch-panel {
 		padding-right: 0;
+    position: absolute;
+    left: 0;
+    width: 24px;
+    height: 32px;
+    transform: translate(-100%, 0);
+    background: var(--muidocs-palette-primary-300);
+    border-radius: 6px 0 0 6px;
+		display: flex;
+    align-items: center;
+    justify-content: center;
 		#sidebar-switch-button {
-			padding-right: 0;
+			padding: 6px 2px;
+			svg {
+				stroke: #fff;
+			}
 		}
 	}
 	a {

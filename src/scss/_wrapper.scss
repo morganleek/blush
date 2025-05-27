@@ -1,3 +1,6 @@
 #wrapper {
+	display: flex;
+  flex-direction: column;
 	overflow: visible;
+	min-height: 100vh;
 }

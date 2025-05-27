@@ -210,6 +210,7 @@ fieldset {
 	border-radius: var(--input--border--radius);
 	font-size: 1rem;
 	gap: 5px;
+	border: 1px solid;
 	svg.icon-svg {
 		margin-left: 0;
 	}
@@ -228,11 +229,37 @@ fieldset {
 }
 
 #errorExplanation, 
-div.flash, 
-.nodata, 
-.warning, 
-.conflict {
+div.flash {
 	@include alert;
+}
+div.flash {
+	&.notice {
+		background: var(--muidocs-palette-success-50);
+		color: var(--muidocs-palette-success-700);
+		border-color: var(--muidocs-palette-success-400);
+		svg.icon-svg {
+			stroke: var(--muidocs-palette-success-700);
+		}
+	}
+	&.error {
+		background: var(--muidocs-palette-error-50);
+		color: var(--muidocs-palette-error-700);
+		border-color: var(--muidocs-palette-error-400);
+		svg.icon-svg {
+			stroke: var(--muidocs-palette-error-700);
+		}
+	}
+}
+.conflict,
+.nodata, 
+.warning {
+	@include alert;
+	background: var(--muidocs-palette-warning-50);
+	color: var(--muidocs-palette-warning-700);
+	border-color: var(--muidocs-palette-warning-400);
+	svg {
+		stroke: var(--muidocs-palette-warning-700);
+	}
 }
 
 @mixin wiki {

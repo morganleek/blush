@@ -267,6 +267,28 @@
 	--muidocs-opacity-switchTrack: 0.38;
 }
 
+html { overflow-y: scroll; }
+
+html, body {
+	margin: 0;
+	padding: 0;
+	min-height: 100vh;
+}
+
 * {
 	box-sizing: border-box;
+}
+
+pre, code {
+	font-family: Consolas, Menlo, "Liberation Mono", Courier, monospace;
+}
+
+.clear {
+	&::after {
+		content: "."; 
+		display: block; 
+		height: 0; 
+		clear: both; 
+		visibility: hidden; 
+	}
 }
