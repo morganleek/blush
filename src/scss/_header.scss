@@ -2,8 +2,6 @@
 
 #header {
 	// order: -1;
-	position: sticky;
-	top: -82px;
 	background: var(--muidocs-palette-primary-900);
 	min-height: 0;
 	padding: 22px 25px;
@@ -14,6 +12,8 @@
 	align-items: center;
 	z-index: 99;
 	&:has(> #main-menu) {
+		position: sticky;
+		top: -82px;
 		padding-bottom: 0;
 	}
 	h1 {
