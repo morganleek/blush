@@ -114,6 +114,9 @@
 		border: 0 none;
 		float: none;
 		transition: all 0.2s;
+		background: rgba(0, 0, 0, 0.1);
+		border: 1px solid #fff;
+		color: #fff;
 		// &:not(:focus-within) {
 		// 	width: 40px;
 		// 	background: transparent;
@@ -137,7 +140,20 @@
 		@include components.input-wrapper;
 		display: inline-flex;
 		align-items: center;
+		justify-content: space-between;
 		border: 0 none;
+		background: rgba(0, 0, 0, 0.1);
+		border: 1px solid #fff;
+		color: #fff;
+
+		&::after {
+			content: "";
+			width: 6px;
+			height: 6px;
+			border-left: 1px solid #fff;
+			border-bottom: 1px solid #fff;
+			transform: rotate(-45deg);
+		}
 	}
 	.drdn-content {
 		top: calc(100% + 6px);

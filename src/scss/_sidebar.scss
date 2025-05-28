@@ -53,8 +53,9 @@
 	}
 	a {
 		&.selected {
-			background: transparent;
-			color: #555;
+			background: var(--muidocs-palette-primary-700);
+			// background: transparent;
+			// color: #555;
 		}
 	}
 }

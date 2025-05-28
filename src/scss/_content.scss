@@ -149,11 +149,13 @@
 			}
 			&.block, 
 			&.inline {
-				justify-content: flex-start;
 				grid-column: 2 / 3;
 				input[type="checkbox"] {
 					height: 20px;
 				}
+			}
+			&.block {
+				justify-content: flex-start;
 			}
 			&.floating {
 				display: inline-flex;
