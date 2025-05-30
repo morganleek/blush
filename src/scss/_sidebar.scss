@@ -44,6 +44,9 @@
 		display: flex;
     align-items: center;
     justify-content: center;
+		&:hover {
+			background-color: var(--muidocs-palette-primary-500);
+		}
 		#sidebar-switch-button {
 			padding: 6px 2px;
 			svg {

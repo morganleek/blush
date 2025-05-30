@@ -1,0 +1,33 @@
+@use "../components";
+
+div.issue {
+	@include components.block--success;
+	padding: 16px;
+	margin: 0 0 0.6em;
+	&::before {
+		content: "";
+		display: block;
+		clear: both;
+	}
+	.attributes {
+		.attribute {
+			// background: red;
+			padding-left: 0;
+			display: grid;
+			grid-template-columns: 120px 1fr;
+			.label {
+				width: auto;
+				margin-left: 0;
+				float: none;
+				overflow: visible;
+			}
+			&.status {
+			}
+			&.progress {
+				p.percent {
+					line-height: 20px;
+				}
+			}
+		}
+	}
+}

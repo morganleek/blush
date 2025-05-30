@@ -117,38 +117,6 @@ fieldset#filters {
 	}
 }
 
-div.issue {
-	padding: 16px;
-	background-color: #f7fff8;
-	margin-top: 16px;
-	&::before {
-		content: "";
-		display: block;
-		clear: both;
-	}
-	.attributes {
-		.attribute {
-			// background: red;
-			padding-left: 0;
-			display: grid;
-			grid-template-columns: 120px 1fr;
-			.label {
-				width: auto;
-				margin-left: 0;
-				float: none;
-				overflow: visible;
-			}
-			&.status {
-			}
-			&.progress {
-				p.percent {
-					line-height: 20px;
-				}
-			}
-		}
-	}
-}
-
 #query_form {
 	&::before {
 		content: "";

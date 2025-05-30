@@ -221,8 +221,8 @@ div.modal .box p {margin: 0.3em 0;}
 .decoration-red, a.decoration-red {color: #c22 !important;}
 
 /***** Links *****/
-a, a:link, a:visited{ color: #169; text-decoration: none; }
-a:hover, a:active{ color: #c61a1a; text-decoration: underline;}
+// a, a:link, a:visited{ color: #169; text-decoration: none; }
+// a:hover, a:active{ color: #c61a1a; text-decoration: underline;}
 a img{ border: 0; }
 
 a.issue.closed, a.issue.closed:link, a.issue.closed:visited { color: #999; text-decoration: line-through; }
@@ -646,14 +646,14 @@ textarea.wiki-edit {width:99%; resize:vertical; box-sizing: border-box;}
 body.textarea-monospace textarea.wiki-edit {font-family: Consolas, Menlo, "Liberation Mono", Courier, monospace;}
 body.textarea-proportional textarea.wiki-edit {font-family: var(--fonts-main);}
 li p {margin-top: 0;}
-div.issue {
-  background: #ffffdd;
-  padding: 8px;
-  margin-bottom: 6px;
-  border: 1px solid #d0d7de;
-  border-radius: 3px;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
-}
+// div.issue {
+//   background: #ffffdd;
+//   padding: 8px;
+//   margin-bottom: 6px;
+//   border: 1px solid #d0d7de;
+//   border-radius: 3px;
+//   box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+// }
 p.breadcrumb { font-size: 0.8125rem; margin: 4px 0 4px 0;}
 p.subtitle { font-size: 0.8125rem; margin: -6px 0 12px 0; font-style: italic; }
 p.footnote { font-size: 0.9em; margin-top: 0px; margin-bottom: 0px; }

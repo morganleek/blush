@@ -1,5 +1,5 @@
 @mixin icon {
-	color: var(--muidocs-palette-primary-500);
+	// color: var(--muidocs-palette-primary-500);
 	// text-transform: uppercase;
 	font-size: 0.875rem;
 	// line-height: 1.75;
@@ -7,6 +7,7 @@
 	display: inline-flex;
 	align-items: center;
 	gap: 2px;
+	background-color: rgba(0, 0, 255, 0.1);
 }
 @mixin button {
 	height: auto;
@@ -31,6 +32,9 @@
 	-webkit-tap-highlight-color: transparent;
 	text-shadow: rgba(9, 11, 11, 0.6) 0px 1px 1px;
 	// box-shadow: rgba(51, 153, 255, 0.5) 0px 1px 0px inset, rgba(0, 77, 153, 0.4) 0px -1px 0px 1px inset, rgba(9, 11, 11, 0.1) 0px 2px 4px 0px;
+	span, .icon-label {
+		color: #fff;
+	}
 	svg.icon-svg {
 		stroke: #fff;
 		&.s12 {
@@ -59,6 +63,25 @@
 @mixin button-group {
 	margin-top: 12px;
 	margin-bottom: 12px;
+}
+
+
+@mixin block--success {
+	background: var(--muidocs-palette-success-50);
+	border: 1px solid var(--muidocs-palette-success-500);
+	border-radius: var(--div--border--radius);
+	hr {
+		background: var(--muidocs-palette-success-500);
+	}
+	a, a:link, a:visited {
+		color: var(--muidocs-palette-success-700);
+	}
+	a:hover, a:active {
+		color: var(--muidocs-palette-success-500);
+	}
+	svg.icon-svg {
+		stroke: var(--muidocs-palette-success-700);
+	}
 }
 
 @mixin icon-green {
@@ -235,12 +258,7 @@ div.flash {
 }
 div.flash {
 	&.notice {
-		background: var(--muidocs-palette-success-50);
-		color: var(--muidocs-palette-success-700);
-		border-color: var(--muidocs-palette-success-400);
-		svg.icon-svg {
-			stroke: var(--muidocs-palette-success-700);
-		}
+		@include block--success;
 	}
 	&.error {
 		background: var(--muidocs-palette-error-50);
