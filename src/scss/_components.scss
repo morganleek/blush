@@ -7,7 +7,13 @@
 	display: inline-flex;
 	align-items: center;
 	gap: 2px;
-	background-color: rgba(0, 0, 255, 0.1);
+	// background-color: rgba(0, 0, 255, 0.1);
+	&:is(h1),
+	&:is(h2),
+	&:is(h3),
+	&:is(h4) {
+		display: flex;
+	}
 }
 @mixin button {
 	height: auto;
@@ -422,6 +428,9 @@ div.flash {
 				transition: all 0.2s;
 				svg.icon-svg {
 					stroke: var(--muidocs-palette-primary-500);
+				}
+				span, .icon-label {
+					color: var(--muidocs-palette-primary-500);
 				}
 			}
 		}
