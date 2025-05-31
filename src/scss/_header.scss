@@ -85,6 +85,7 @@
 			li {
 				a {
 					display: block;
+					text-shadow: none;
 					&:hover {
 						background-color: var(--muidocs-palette-primary-500);
 					}
