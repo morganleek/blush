@@ -39,10 +39,10 @@
 	text-shadow: rgba(9, 11, 11, 0.6) 0px 1px 1px;
 	// box-shadow: rgba(51, 153, 255, 0.5) 0px 1px 0px inset, rgba(0, 77, 153, 0.4) 0px -1px 0px 1px inset, rgba(9, 11, 11, 0.1) 0px 2px 4px 0px;
 	span, .icon-label {
-		color: #fff;
+		color: currentColor; // #fff;
 	}
 	svg.icon-svg {
-		stroke: #fff;
+		stroke: currentColor;
 		&.s12 {
 			width: 1.25rem;
 			height: 1.25rem;

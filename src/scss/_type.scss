@@ -56,6 +56,10 @@ table {
 				text-shadow: none;
 				font-weight: 600;
 				font-size: 0.875rem;
+				&:hover {
+					background-color: transparent;
+					color: var(--muidocs-palette-primary-800);
+				}
 			}
 			a {
 				&:has(svg) {
