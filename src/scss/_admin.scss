@@ -18,6 +18,9 @@
 					padding-top: 6px;
 					padding-bottom: 6px;
 				}
+				&.selected {
+					background: var(--muidocs-palette-primary-700);
+				}
 			}
 		}
 	}

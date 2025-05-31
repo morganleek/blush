@@ -179,7 +179,7 @@
 
 .icon {
 	@include icon;
-	&:is(a), &:is(a:link) {
+	&:is(a), &:is(a:link), &:is(a:visited) {
 		@include button;
 	}
 	&:is(span) {
