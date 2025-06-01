@@ -595,7 +595,9 @@ div.flash {
 
 	&:nth-child(odd),
 	&:nth-child(even) {
-		@include active-row;
+		&:hover {
+			@include active-row;
+		}
 	}
 }
 
