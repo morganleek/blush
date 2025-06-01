@@ -45,22 +45,10 @@ table {
 		&:not(.odd-even) {
 			tbody {
 				tr {
-					&:nth-child(odd) {
-						@include components.odd-row;
-					}
-					&:nth-child(even) {
-						@include components.even-row;
-					}
-					&:nth-child(odd),
-					&:nth-child(even) {
-						&:hover {
-							@include components.active-row;
-						}
-					}
+					@include components.odd-even-rows;
 				}
 			}
 		}
-		
 		thead {
 			tr {
 				th, td {
@@ -141,24 +129,28 @@ table {
 		}
 	}
 	&.issues {
-		tr.issue {
+		tr.issue:not(.context-menu-selection) {
 			&[class*="priority-"] td.priority {
 				color: #000;
+				border-top: 1px solid #fff;
 			}
 			&.priority-1 td.priority {
 				background: var(--muidocs-palette-success-50);
 			}
 			&.priority-2 td.priority {
 				background: var(--muidocs-palette-success-100);
+				border-top-color: var(--muidocs-palette-success-50);
 			}
 			&.priority-3 td.priority {
-				background: var(--muidocs-palette-error-50); // rgba(251,105,98, 0.1);
+				background: var(--muidocs-palette-error-50);
 			}
 			&.priority-4 td.priority {
-				background: var(--muidocs-palette-error-100); // rgba(251,105,98, 0.1);
+				background: var(--muidocs-palette-error-100);
+				border-top-color: var(--muidocs-palette-error-50);
 			}
 			&.priority-5 td.priority {
-				background: var(--muidocs-palette-error-200); // rgba(251,105,98, 0.1);
+				background: var(--muidocs-palette-error-200);
+				border-top-color: var(--muidocs-palette-error-50);
 			}
 		}
 		
