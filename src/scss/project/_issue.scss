@@ -31,3 +31,18 @@ div.issue {
 		}
 	}
 }
+
+#issue-changesets { 
+	div.changeset {
+		&:nth-child(odd) {
+			@include components.odd-row;
+		}
+		&:nth-child(even) {
+			@include components.even-row;
+		}
+		&:nth-child(odd),
+		&:nth-child(even) {
+			@include components.active-row;
+		}
+	}
+}
