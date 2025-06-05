@@ -2,6 +2,11 @@
 
 #projects-index {
 	ul.projects {
+		&:has(> .child) {
+			display: flex;
+			flex-direction: column;
+			gap: 8px;
+		}
 		& > li {
 			&.root,
 			&.child {
@@ -14,7 +19,7 @@
 				gap: 0;
 				& > div {
 					position: relative;
-					padding: 16px;
+					padding: 12px;
 					& > a {
 						&[href]::before {
 							content: "";
@@ -58,12 +63,17 @@
 			&.root {
 				background: #f9fafb;
 				box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+				& > div {
+					&:has(+ .projects) {
+						padding-bottom: 8px;
+					}
+				}
 			}
 			&.child {
 				background: #fff;
 				border: 1px solid #d0d7de;
-				border-radius: 8px;
-				margin-top: 8px;
+				border-radius: 12px;
+				margin: 0;
 				box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.1), 0px 1px 1px 0px rgba(0, 0, 0, 0.07), 0px 1px 3px 0px rgba(0, 0, 0, 0.06);
 				&:first-child {
 					margin-top: 0;
@@ -79,7 +89,7 @@
 		}
 		&:not(.root) {
 			margin-top: 0;
-			padding: 0 16px 16px !important;
+			padding: 0 12px 12px !important;
 			border-left: 0 none !important;
 		}
 	}
