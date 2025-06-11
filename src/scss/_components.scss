@@ -34,12 +34,11 @@
 	justify-content: center;
 	gap: 2px;
 	transition: all 0.2s;
-	// text-transform: uppercase;
-	// box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.14);
 	position: relative;
 	-webkit-tap-highlight-color: transparent;
-	text-shadow: rgba(9, 11, 11, 0.6) 0px 1px 1px;
-
+	// text-transform: uppercase;
+	// box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.14);
+	// text-shadow: rgba(9, 11, 11, 0.6) 0px 1px 1px;
 	// box-shadow: rgba(51, 153, 255, 0.5) 0px 1px 0px inset, rgba(0, 77, 153, 0.4) 0px -1px 0px 1px inset, rgba(9, 11, 11, 0.1) 0px 2px 4px 0px;
 	span,
 	.icon-label {
@@ -93,12 +92,19 @@
 	a,
 	a:link,
 	a:visited {
-		color: var(--muidocs-palette-success-700);
+		&:not(.icon) {
+			color: var(--muidocs-palette-success-700);
+		}
 	}
 
 	a:hover,
 	a:active {
-		color: var(--muidocs-palette-success-500);
+		&:not(.icon) {
+			color: var(--muidocs-palette-success-500);
+		}
+		svg.icon-svg {
+			stroke: var(--muidocs-palette-success-500);
+		}
 	}
 
 	svg.icon-svg {
@@ -455,10 +461,10 @@ div.flash {
 @mixin card {
 	border: 1px solid #d0d7de;
 	padding: 8px;
-	margin: 0 0 20px 0;
+	margin: 0 0 10px 0;
 	color: #505050;
 	line-height: 1.5em;
-	border-radius: 8px;
+	border-radius: 12px;
 	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 	// padding: 16px;
 }
